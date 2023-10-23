@@ -58,9 +58,9 @@ Before you get started, ensure you have the following in place:
 - Ensure your WordPress post settings align with the template format.
 
 Run the script to create draft posts on your WordPress site. You can then review and publish them manually:
-    ```bash
-    python generate-blog-post.py
-    ```
+```bash
+python generate-blog-post.py
+```
 
 ## Contributing
 
