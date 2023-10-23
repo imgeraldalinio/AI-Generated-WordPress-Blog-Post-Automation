@@ -52,7 +52,8 @@ Before you get started, ensure you have the following in place:
 
 ## Usage
 
-- Customize your post title, categories, and tags by editing the `post_title`, `post_categories`, and `post_tags` variables in the script.
+- Customize your post title by editing the `post_title` variable value.
+- The content automatically generate a `post_categories`, and `post_tags` in your content.
 - Adjust the `max_tokens` value to control the length of generated content.
 - Modify the template format in the `generate_content` function to match your desired blog post structure.
 - Ensure your WordPress post settings align with the template format.
