@@ -1,22 +1,20 @@
-**List of development tools you can install on Ubuntu 22.04 LTS**
-
 How to Install Python Development Tools on Ubuntu 22.04 LTS
 How to Install Node.js and NPM on Ubuntu 22.04 LTS
-How to Install Java Development Kit (JDK) on Ubuntu 22.04 LTS
-How to Install Visual Studio Code on Ubuntu 22.04 LTS
-How to Install Git and Set Up Git on Ubuntu 22.04 LTS
-How to Install Docker on Ubuntu 22.04 LTS
-How to Install PostgreSQL Database on Ubuntu 22.04 LTS
-How to Install MySQL Database on Ubuntu 22.04 LTS
-How to Install Apache Web Server on Ubuntu 22.04 LTS
-How to Install PHP and Composer on Ubuntu 22.04 LTS
-How to Install Ruby and Ruby on Rails on Ubuntu 22.04 LTS
-How to Install Go (Golang) on Ubuntu 22.04 LTS
-How to Install Rust Programming Language on Ubuntu 22.04 LTS
-How to Install .NET Core SDK on Ubuntu 22.04 LTS
-How to Install Flutter and Dart on Ubuntu 22.04 LTS
-How to Install Android Studio on Ubuntu 22.04 LTS
-How to Install Subversion (SVN) on Ubuntu 22.04 LTS
-How to Install Gradle Build Tool on Ubuntu 22.04 LTS
-How to Install Maven Build Tool on Ubuntu 22.04 LTS
-How to Install Apache Maven Build Tool on Ubuntu 22.04 LTS
+# How to Install Java Development Kit (JDK) on Ubuntu 22.04 LTS
+# How to Install Visual Studio Code on Ubuntu 22.04 LTS
+# How to Install Git and Set Up Git on Ubuntu 22.04 LTS
+# How to Install Docker on Ubuntu 22.04 LTS
+# How to Install PostgreSQL Database on Ubuntu 22.04 LTS
+# How to Install MySQL Database on Ubuntu 22.04 LTS
+# How to Install Apache Web Server on Ubuntu 22.04 LTS
+# How to Install PHP and Composer on Ubuntu 22.04 LTS
+# How to Install Ruby and Ruby on Rails on Ubuntu 22.04 LTS
+# How to Install Go (Golang) on Ubuntu 22.04 LTS
+# How to Install Rust Programming Language on Ubuntu 22.04 LTS
+# How to Install .NET Core SDK on Ubuntu 22.04 LTS
+# How to Install Flutter and Dart on Ubuntu 22.04 LTS
+# How to Install Android Studio on Ubuntu 22.04 LTS
+# How to Install Subversion (SVN) on Ubuntu 22.04 LTS
+# How to Install Gradle Build Tool on Ubuntu 22.04 LTS
+# How to Install Maven Build Tool on Ubuntu 22.04 LTS
+# How to Install Apache Maven Build Tool on Ubuntu 22.04 LTS
