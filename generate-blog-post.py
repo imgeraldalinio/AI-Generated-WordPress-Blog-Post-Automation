@@ -13,9 +13,6 @@ import requests
 # Load environment variables from the .env file
 load_dotenv()
 
-# Define your post title
-post_title = "How to Install .NET Core SDK on Ubuntu 22.04 LTS"
-
 # Initialize empty lists for categories and tags
 post_categories = []
 post_tags = []
@@ -28,6 +25,25 @@ site_url = os.getenv('WORDPRESS_SITE_URL')
 username = os.getenv('WORDPRESS_USERNAME')
 password = os.getenv('WORDPRESS_PASSWORD')
 wp = Client(site_url, username, password)
+
+# Define the file path
+file_path = 'blog_post.txt'
+
+# Initialize an empty list to store post titles
+post_titles = []
+    
+# Function to get list of post titles
+def get_post_titles():
+    # Open the file for reading
+    with open(file_path, 'r') as file:
+        for line in file:
+            # Remove leading and trailing whitespace
+            line = line.strip()
+            # Check if the line is not empty and does not start with #
+            if line and not line.startswith('#'):
+                post_titles.append(line)
+    # Return the post titles as a list
+    return post_titles
 
 # Function to check OpenAI status
 def check_openai_status():
@@ -104,7 +120,7 @@ def get_code_language(code_block):
 
     return "text"  # Default to plain text
 
-def generate_content(max_tokens):
+def generate_content(max_tokens, post_title):
     content = ""
     progress_bar = tqdm(total=max_tokens, unit=' tokens', dynamic_ncols=True, ascii=True)
     retry_count = 0  # Initialize the retry count
@@ -160,8 +176,7 @@ def generate_content(max_tokens):
 
             [Additional tips or notes if necessary.]
             """
-        
-
+            
             response = openai.ChatCompletion.create(
                 model="gpt-4",
                 messages=[
@@ -204,33 +219,36 @@ def generate_content(max_tokens):
 
 try:
     max_tokens = int(os.getenv('MAX_TOKENS'))  # Adjust based on the desired content length
-    generated_content = generate_content(max_tokens)
+    post_titles = get_post_titles()
 
-    if generated_content:
-        # Extract and update categories and tags
-        extract_categories_tags(generated_content)
+    for post_title in post_titles:
+        generated_content = generate_content(max_tokens, post_title)
+        
+        if generated_content:
+            # Extract and update categories and tags
+            extract_categories_tags(generated_content)
 
-        # Format code snippets in the generated content
-        formatted_content = format_code_snippets(generated_content)
+            # Format code snippets in the generated content
+            formatted_content = format_code_snippets(generated_content)
 
-        # Create a new blog post
-        post = WordPressPost()
-        post.title = post_title
-        post.content = formatted_content
+            # Create a new blog post
+            post = WordPressPost()
+            post.title = post_title
+            post.content = formatted_content
 
-        # Set the post category, tags, and other properties
-        post.terms_names = {
-            'category': post_categories,  # Assign the extracted categories here
-            'post_tag': post_tags,  # Assign the extracted tags here
-        }
+            # Set the post category, tags, and other properties
+            post.terms_names = {
+                'category': post_categories,  # Assign the extracted categories here
+                'post_tag': post_tags,  # Assign the extracted tags here
+            }
 
-        # Save the post as a draft for review
-        post.post_status = 'draft'
+            # Save the post as a draft for review
+            post.post_status = 'draft'
 
-        # Create the draft post on your WordPress site
-        post_id = wp.call(NewPost(post))
+            # Create the draft post on your WordPress site
+            post_id = wp.call(NewPost(post))
 
-        print(f"Draft blog post created with ID {post_id}")
+            print(f"Draft blog post created with ID {post_id}")
 
 except Exception as e:
     print(f"An error occurred: {e}")
