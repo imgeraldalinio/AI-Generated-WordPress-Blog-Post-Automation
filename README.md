@@ -72,6 +72,18 @@ Contributions are welcome! If you'd like to contribute to this project, please f
 3. Commit your changes and push them to your fork.
 4. Submit a pull request with a clear description of your changes.
 
+## Examples
+Here's the results example of generated blog posts
+
+Example 1:
+![Screenshot-1](images/Screenshot-1.png)
+
+Example 2:
+![Screenshot-2](images/Screenshot-2.png)
+
+Example 3:
+![Screenshot-3](images/Screenshot-3.png)
+
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](https://github.com/imgeraldalinio/AI-Generated-WordPress-Blog-Post-Automation/blob/main/LICENSE) file for details.
